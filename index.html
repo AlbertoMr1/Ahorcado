@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ahorcado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body>
+    <dialog id="ingresarPalabraDialogo">Debes ingresar una palabra</dialog>
+    <header>
+      <div class="contenedorHeader">
+        <img src="img/alura.png" class="logo" alt="Logo de alura">
+        <div class="contenedorTitulo">
+          <h1 id="titulo">Ahorcado</h1>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <div id="inicio">
+        <button class="botonInicio btnHover" onclick="return iniciarJuego()">Iniciar Juego</button>
+        <button class="botonPalabraNueva btnHover" onclick="return interfazAgregarPalabra()">Agregar nueva palabra</button>
+      </div>
+
+      <div class="juego" id="nuevaPalabra">
+        <div id="div-aparece-ahorcado" class="canvas">
+          <canvas id="horca" width="1350" height="440"></canvas>
+        </div>
+        <div class="botones">
+          <button class="btnNuevaPartida btnHover" onclick="return inicio()">
+            Nueva Partida
+          </button>
+          <button class="btnSalir btnHover" onclick="return regresarInicio()">
+            Desistir
+          </button>
+        </div>
+      </div>
+
+      <div class="agregarPalabra">
+        <input type="text" placeholder="Ingrese una palabra" id="palabra" maxlength="10" autocomplete="off">
+        <p id="aviso">🛈 Longitud máxima: 10</p>
+        <div class="botonesPalabra">
+          <button class="botonAgregar btnHover" onclick="return agregarPalabra()">
+            Guardar y empezar
+          </button>
+          <button class="botonCancelar btnHover" onclick="return cancelar()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="pie">
+        <div class="pieContenedor">
+          <a href="https://www.linkedin.com/in/luis-alberto-martinez-ramirez-409a72237" target="_blank">
+            <img src="img/linkedin.png" class="imagen" width=40px>
+          </a>
+          <a href="https://github.com/AlbertoMr1" target="_blank">
+            <img src="img/GitHub.png" class="imagen" width=40px>
+          </a>
+        </div>
+        <div class="textoPie">
+          <p>
+            Creado por Luis Alberto Martinez Ramirez
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/dibujarHorca.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/botones.js"></script>
+  </body>
+</html>
